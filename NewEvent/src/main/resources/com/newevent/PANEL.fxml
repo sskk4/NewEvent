@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to top right, #150050,#A31ACB, #3F0071); -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newevent.MainPanelController">
+   <children>
+      <AnchorPane fx:id="pane__welcome" layoutX="4.0" layoutY="4.0" prefHeight="712.0" prefWidth="1272.0" style="-fx-background-color: linear-gradient(to right, #3D1766,#791db1); -fx-background-radius: 20;">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #150050, #3F0071); -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutY="15.0" prefHeight="59.0" prefWidth="200.0" text="NEW EVENT" textFill="#f1f6f5">
+                     <font>
+                        <Font name="Broadway" size="25.0" />
+                     </font>
+                     <effect>
+                        <DisplacementMap>
+                           <mapData>
+                              <FloatMap />
+                           </mapData>
+                           <input>
+                              <Glow />
+                           </input>
+                        </DisplacementMap>
+                     </effect>
+                  </Label>
+                  <JFXButton fx:id="btn_logout" layoutX="25.0" layoutY="600.0" onAction="#logout" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #850000,#DC0000); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="LOG OUT" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_editeventadmin" layoutX="25.0" layoutY="555.0" onAction="#Paneadminshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #425F57,#749F82); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="EDIT EVENTS" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="90.0" onAction="#Paneeventshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #6C00FF,#3C79F5); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="LIST OF EVENTS" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="135.0" onAction="#Paneuserprofileshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #6C00FF,#3C79F5); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="YOUR PROFILE" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Label layoutX="520.0" layoutY="37.0" opacity="0.29" text="WELCOME!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="72.0" />
+               </font>
+               <effect>
+                  <Shadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </Label>
+            <Label layoutX="520.0" layoutY="37.0" scaleX="0.7" scaleY="0.7" styleClass="text" stylesheets="@style/style.css" text="WELCOME!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="72.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="1234.0" layoutY="10.0" onAction="#handleclose" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: linear-gradient(to right, #FB2576,#D23369); -fx-background-radius: 100;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="txt_username_welcome" alignment="CENTER" layoutX="634.0" layoutY="93.0" prefHeight="49.0" prefWidth="150.0" text="USER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="33.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <AnchorPane layoutX="236.0" layoutY="156.0" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(to right, #3D1766, #4f0080); -fx-background-radius: 20;" />
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_admin" layoutX="4.0" layoutY="4.0" prefHeight="712.0" prefWidth="1272.0" style="-fx-background-color: linear-gradient(to right, #3D1766,#6F1AB6); -fx-background-radius: 20;" visible="false">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #150050, #3F0071); -fx-background-radius: 20;">
+               <children>
+                  <JFXButton layoutX="25.0" layoutY="348.0" onAction="#validationAdd" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #425F57,#749F82); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="ADD" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txt_name" layoutX="25.0" layoutY="125.0" prefWidth="150.0" promptText="NAME" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 10;" />
+                  <TextField fx:id="txt_city" layoutX="25.0" layoutY="165.0" prefWidth="150.0" promptText="CITY" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 10;" />
+                  <TextField fx:id="txt_price" layoutX="25.0" layoutY="244.0" prefWidth="150.0" promptText="PRICE" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 10;" />
+                  <TextField fx:id="txt_amount" layoutX="25.0" layoutY="284.0" prefWidth="150.0" promptText="AMOUNT" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 10;" />
+                  <Label alignment="CENTER" layoutY="15.0" prefHeight="59.0" prefWidth="200.0" text="NEW EVENT" textFill="#f1f6f5">
+                     <font>
+                        <Font name="Broadway" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="65.0" text="ADMIN PANEL" textFill="WHITE" />
+                  <JFXButton layoutX="25.0" layoutY="600.0" onAction="#Panewelcomeshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #6C00FF,#3C79F5); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="BACK" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <DatePicker fx:id="txt_date" layoutX="25.0" layoutY="204.0" prefWidth="150.0" promptText="DATE" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA);" />
+                  <TextField fx:id="txt_id" layoutX="25.0" layoutY="88.0" prefWidth="150.0" promptText="ID (for edit only)" style="-fx-background-color: linear-gradient(to right, #FFFFD0, #EAEAEA); -fx-background-radius: 10;" />
+                  <JFXButton layoutX="25.0" layoutY="558.0" onAction="#Paneadminshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #A555EC, #D09CFA); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="REFRESH" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="393.0" onAction="#validationUpdate" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #FF7B54, #FDA769); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="UPDATE" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="438.0" onAction="#Delete" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #850000, #DC0000); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="DELETE" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_events" layoutX="224.0" layoutY="90.0" onMouseClicked="#getSelected" prefHeight="500.0" prefWidth="1010.0" stylesheets="@style/style.css">
+              <columns>
+                <TableColumn fx:id="col_id" editable="false" minWidth="20.0" prefWidth="51.0" resizable="false" text="ID" />
+                  <TableColumn fx:id="col_name" editable="false" minWidth="0.0" prefWidth="248.0" resizable="false" text="NAME" />
+                  <TableColumn fx:id="col_city" editable="false" minWidth="0.0" prefWidth="201.0" resizable="false" text="CITY" />
+                  <TableColumn fx:id="col_date" editable="false" prefWidth="211.0" resizable="false" text="DATE" />
+                  <TableColumn fx:id="col_price" editable="false" minWidth="0.0" prefWidth="85.0" resizable="false" text="PRICE" />
+                  <TableColumn fx:id="col_amount" editable="false" minWidth="0.0" prefWidth="95.0" resizable="false" text="AMOUNT" />
+                  <TableColumn fx:id="col_whoadd" editable="false" minWidth="0.0" prefWidth="107.0" resizable="false" text="ADDED BY" />
+              </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="1234.0" layoutY="10.0" onAction="#handleclose" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: linear-gradient(to right, #FB2576,#D23369); -fx-background-radius: 100;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="filterField" layoutX="567.0" layoutY="35.0" prefHeight="25.0" prefWidth="325.0" promptText="SEARCH" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 0 10 10 0;" />
+            <Label layoutX="530.0" layoutY="35.0" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: linear-gradient(to right, #645CBB,#A084DC); -fx-background-radius: 10 0 0 10;" />
+            <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="540.0" layoutY="39.0">
+               <image>
+                  <Image url="@img/71403.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_events_user" layoutX="4.0" layoutY="4.0" prefHeight="712.0" prefWidth="1272.0" style="-fx-background-color: linear-gradient(to right, #3D1766,#6F1AB6); -fx-background-radius: 20;" visible="false">
+         <children>
+            <TextField fx:id="filterField1" layoutX="568.0" layoutY="35.0" prefHeight="25.0" prefWidth="325.0" promptText="SEARCH" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 0 10 10 0;" />
+            <Label layoutX="535.0" layoutY="35.0" prefHeight="25.0" prefWidth="37.0" style="-fx-background-color: linear-gradient(to right, #425F57,#749F82); -fx-background-radius: 10 0 0 10;" />
+            <ImageView fitHeight="17.0" fitWidth="18.0" layoutX="545.0" layoutY="39.0">
+               <image>
+                  <Image url="@img/71403.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #150050, #3F0071); -fx-background-radius: 20;">
+               <children>
+                  <JFXButton layoutX="25.0" layoutY="246.0" onAction="#buyTicket" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #425F57,#749F82); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="BUY TICKET" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label alignment="CENTER" layoutY="15.0" prefHeight="59.0" prefWidth="200.0" text="NEW EVENT" textFill="#f1f6f5">
+                     <font>
+                        <Font name="Broadway" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="70.0" layoutY="66.0" text="EVENT LIST" textFill="WHITE" />
+                  <JFXButton layoutX="25.0" layoutY="600.0" onAction="#Panewelcomeshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #6C00FF,#3C79F5); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="BACK" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="558.0" onAction="#Paneeventshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #A555EC, #D09CFA); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="REFRESH" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="33.0" layoutY="107.0" opacity="0.11" text="EVENT ID" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Label>
+                  <TextField fx:id="txt_idtobuy" alignment="CENTER" editable="false" layoutX="25.0" layoutY="138.0" prefWidth="150.0" promptText="ID" style="-fx-background-color: linear-gradient(to right, #CEEDC7, #EAEAEA); -fx-background-radius: 10;" />
+                  <TextField fx:id="txt_amounttobuy" alignment="CENTER" layoutX="25.0" layoutY="178.0" prefWidth="150.0" promptText="HOW MANY TICKETS" style="-fx-background-color: linear-gradient(to right, #CEEDC7, #EAEAEA); -fx-background-radius: 10;" />
+                  <Label layoutX="32.0" layoutY="197.0" opacity="0.11" text="AMOUNT" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="30.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_events2" layoutX="225.0" layoutY="101.0" onMouseClicked="#getSelectedtobuy" prefHeight="500.0" prefWidth="1010.0" stylesheets="@style/style.css">
+               <columns>
+                  <TableColumn fx:id="col_id1" editable="false" minWidth="20.0" prefWidth="51.0" resizable="false" text="ID" />
+                  <TableColumn fx:id="col_name1" editable="false" minWidth="0.0" prefWidth="284.0" resizable="false" text="NAME" />
+                  <TableColumn fx:id="col_city1" editable="false" minWidth="0.0" prefWidth="317.0" resizable="false" text="CITY" />
+                  <TableColumn fx:id="col_date1" editable="false" prefWidth="149.0" resizable="false" text="DATE" />
+                  <TableColumn fx:id="col_price1" editable="false" minWidth="0.0" prefWidth="91.0" resizable="false" text="PRICE" />
+                  <TableColumn fx:id="col_amount1" editable="false" minWidth="0.0" prefWidth="103.0" resizable="false" text="AMOUNT" />
+               </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="1234.0" layoutY="10.0" onAction="#handleclose" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: linear-gradient(to right, #FB2576,#D23369); -fx-background-radius: 100;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_user_profile" layoutX="4.0" layoutY="4.0" prefHeight="712.0" prefWidth="1272.0" style="-fx-background-color: linear-gradient(to right, #3D1766,#6F1AB6); -fx-background-radius: 20;" visible="false">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #150050, #3F0071); -fx-background-radius: 20;">
+               <children>
+                  <Label alignment="CENTER" layoutY="15.0" prefHeight="59.0" prefWidth="200.0" text="NEW EVENT" textFill="#f1f6f5">
+                     <font>
+                        <Font name="Broadway" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="65.0" text="YOUR PROFILE" textFill="WHITE" />
+                  <JFXButton layoutX="25.0" layoutY="600.0" onAction="#Panewelcomeshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #6C00FF,#3C79F5); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="BACK" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="25.0" layoutY="558.0" onAction="#Paneuserprofileshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #A555EC, #D09CFA); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="REFRESH" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_changepassword" layoutX="25.0" layoutY="100.0" onAction="#Panechangepasswordshow" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #FB2576,#D23369); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="CHANGE PASSWORD" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_newpassword" layoutX="25.0" layoutY="200.0" onAction="#ChangePassword" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right, #425F57,#749F82); -fx-background-radius: 20;" styleClass="btn" stylesheets="@style/style.css" text="ACCEPT" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <TextField fx:id="txt_newpassword" layoutX="29.0" layoutY="151.0" prefWidth="150.0" promptText="NEW PASSWORD" style="-fx-background-color: linear-gradient(to right, #FAF7F0, #EAEAEA); -fx-background-radius: 10;" visible="false" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_yourevents" layoutX="224.0" layoutY="305.0" onMouseClicked="#getSelected" prefHeight="300.0" prefWidth="1010.0" stylesheets="@style/style.css">
+               <columns>
+                  <TableColumn fx:id="col_name2" editable="false" minWidth="0.0" prefWidth="284.0" resizable="false" text="NAME" />
+                  <TableColumn fx:id="col_city2" editable="false" minWidth="0.0" prefWidth="317.0" resizable="false" text="CITY" />
+                  <TableColumn fx:id="col_date2" editable="false" prefWidth="246.0" resizable="false" text="DATE" />
+                  <TableColumn fx:id="col_amount2" editable="false" minWidth="0.0" prefWidth="151.0" resizable="false" text="AMOUNT" />
+               </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="1234.0" layoutY="10.0" onAction="#handleclose" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: linear-gradient(to right, #FB2576,#D23369); -fx-background-radius: 100;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="244.0" layoutY="74.0" text="YOUR USERNAME:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="23.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+            <Label layoutX="244.0" layoutY="155.0" text="TYPE:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="23.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+            <Label layoutX="244.0" layoutY="114.0" text="E-MAIL:" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="23.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+            <Label layoutX="282.0" layoutY="251.0" opacity="0.33" prefHeight="49.0" prefWidth="366.0" text="PURCHASED TICKETS">
+               <font>
+                  <Font name="Segoe UI Bold" size="35.0" />
+               </font>
+               <effect>
+                  <Glow>
+                     <input>
+                        <GaussianBlur />
+                     </input>
+                  </Glow>
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9473684430122375" green="0.719298243522644" blue="0.894152045249939" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8212719559669495" green="0.2558479607105255" blue="0.9210526347160339" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="316.0" layoutY="251.0" prefHeight="49.0" prefWidth="280.0" text="PURCHASED TICKETS">
+               <font>
+                  <Font name="Segoe UI Bold" size="27.0" />
+               </font>
+               <effect>
+                  <Glow>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </Glow>
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9490196108818054" green="0.7176470756530762" blue="0.8941176533699036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="txt_profilename" layoutX="447.0" layoutY="67.0" text="LABEL">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9490196108818054" green="0.7176470756530762" blue="0.8941176533699036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8395061492919922" green="0.6990740895271301" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="txt_profilemail" layoutX="338.0" layoutY="108.0" text="LABEL">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9490196108818054" green="0.7176470756530762" blue="0.8941176533699036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8395061492919922" green="0.6990740895271301" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="txt_profiletype" layoutX="314.0" layoutY="149.0" text="LABEL">
+               <font>
+                  <Font name="Segoe UI Bold" size="30.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9490196108818054" green="0.7176470756530762" blue="0.8941176533699036" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8395061492919922" green="0.6990740895271301" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
